@@ -16,8 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)
-        -> Bool {
+        -> Bool
+    
+    {
             FirebaseApp.configure()
+        
+            let myDatabase = Database.database().reference()
+        
+            myDatabase.setValue("We've got Data!")
+        
             return true
     }
 }
