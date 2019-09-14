@@ -13,6 +13,7 @@ pod 'SVProgressHUD'
 pod 'Firebase/Analytics'
 pod 'Firebase/Performance'
 pod 'ChameleonFramework'
+pod 'GoogleSignIn'
 
 
 

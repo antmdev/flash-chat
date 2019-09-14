@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 
 class RegisterViewController: UIViewController {
@@ -31,7 +32,6 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: AnyObject) {
         
 
-        
         //TODO: Set up a new user on our Firbase database
         
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
