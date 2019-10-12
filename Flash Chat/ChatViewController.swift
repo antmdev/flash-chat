@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+       
     
     // Declare instance variables here
 
@@ -27,7 +29,10 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         //TODO: Set yourself as the delegate and datasource here:
-        
+        messageTableView.delegate = self
+        messageTableView.dataSource = self
+
+
         
         
         //TODO: Set yourself as the delegate of the text field here:
@@ -39,8 +44,12 @@ class ChatViewController: UIViewController {
         
 
         //TODO: Register your MessageCell.xib file here:
-
+         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil) , forCellReuseIdentifier: "customMessageCell")
         
+        
+        configureTableView()
+        
+       
     }
 
     ///////////////////////////////////////////
@@ -51,9 +60,29 @@ class ChatViewController: UIViewController {
     
     //TODO: Declare cellForRowAtIndexPath here:
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
+        
+        let messageArray = ["First Message","Second Meuyeuyfbeufbeuf beauif aduhf behbf iueyjb jhb djehb djdbuhwjefb seifewufh o;abfvukyfkb lkhusjb vcliwfb fhlizb kfjwlafjwr,fssage", "Third Message"]
+        
+        cell.messageBody.text = messageArray[indexPath.row]
+        
+        return cell //requires an output
+    }
+    
     
     
     //TODO: Declare numberOfRowsInSection here:
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3 // number of rows required
+    }
+    
+// if you want sections in your table view like ios settings
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 2
+//    }
     
     
     
@@ -62,6 +91,12 @@ class ChatViewController: UIViewController {
     
     
     //TODO: Declare configureTableView here:
+    
+    func configureTableView() {
+        messageTableView.rowHeight = UITableView.automaticDimension
+        messageTableView.estimatedRowHeight = 120.0
+
+    }
     
     
     
