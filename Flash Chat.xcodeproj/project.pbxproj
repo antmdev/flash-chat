@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F3B3A912298595A0032C0AC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F3B3A902298595A0032C0AC /* GoogleService-Info.plist */; };
+		0F4CB1BF232D5D3400F27464 /* closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CB1BE232D5D3400F27464 /* closures.swift */; };
 		6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9C21B94EBA10053D2E7 /* Images.xcassets */; };
 		6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321A9DB1B94EBE70053D2E7 /* CustomMessageCell.swift */; };
 		6321A9E51B94EBE70053D2E7 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9DE1B94EBE70053D2E7 /* MessageCell.xib */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0F3B3A902298595A0032C0AC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F4CB1BE232D5D3400F27464 /* closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = closures.swift; sourceTree = "<group>"; };
 		11480DB1F2A4751C3DD705C2 /* Pods-Flash Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flash Chat.debug.xcconfig"; path = "Target Support Files/Pods-Flash Chat/Pods-Flash Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		6321A9B61B94EBA10053D2E7 /* Flash Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flash Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321A9BA1B94EBA10053D2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */,
 				63E28B2B1B9A337600FBF6E0 /* ChatViewController.swift */,
 				63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */,
+				0F4CB1BE232D5D3400F27464 /* closures.swift */,
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
 			);
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
+				0F4CB1BF232D5D3400F27464 /* closures.swift in Sources */,
 				63E28B251B9A335300FBF6E0 /* Message.swift in Sources */,
 				6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
@@ -439,7 +443,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Flash Chat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antmilner.Flash-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,7 +465,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "Flash Chat/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.antmilner.Flash-Chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";

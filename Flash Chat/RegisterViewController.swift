@@ -37,7 +37,6 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
             
             (user, error) in
-            
             if error != nil
             {
                 print(error!)
@@ -48,7 +47,7 @@ class RegisterViewController: UIViewController {
                 print("Registration Succesful!")
                 
             //inside a closure - i.e a method without a name
-            // So need to specify where the method for performSegue occure
+            //So need to specify where the method for performSegue occure
             //so we add self. to performSegue
                 
                 self.performSegue(withIdentifier: "goToChat", sender: self)
