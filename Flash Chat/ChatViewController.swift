@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -53,6 +54,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         configureTableView()
         retrieveMessages()
         
+        messageTableView.separatorStyle = .none
+        
+        
        
     }
 
@@ -68,9 +72,22 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
-        let messageArray = ["How's it going?", "mins you have to give me 300001 hugs today, ok?", "Sorry mins not a fucking chance"]
+        cell.messageBody.text = messageArray[indexPath.row].messageBody
+        cell.senderUsername.text = messageArray[indexPath.row].sender
+        cell.avatarImageView.image = UIImage(named: "egg")
         
-        cell.messageBody.text = messageArray[indexPath.row]
+        //set colours based on whether or not you are the logged in user
+        if cell.senderUsername.text == Auth.auth().currentUser?.email as String!
+        {
+            cell.avatarImageView.backgroundColor = UIColor.flatMint()
+            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
+            
+        } else {
+            cell.avatarImageView.backgroundColor = UIColor.flatWatermelon()
+            cell.messageBackground.backgroundColor = UIColor.flatGray()
+            
+            
+        }
         
         return cell //requires an output
     }
@@ -80,7 +97,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //TODO: Declare numberOfRowsInSection here:
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3 // number of rows required
+        return messageArray.count // number of rows required
     }
     
 // if you want sections in your table view like ios settings
@@ -200,7 +217,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let text = snapshotValue["MessageBody"]!
             let sender = snapshotValue["Sender"]!
             
-            print(text, sender)
+            let message = Message()
+            message.messageBody = text //set message object in ethe message class
+            message.sender = sender
+            
+            self.messageArray.append(message)
+            self.configureTableView()
+            self.messageTableView.reloadData() //everytime we add new data to DB it will reload data so its shown.
         })
     }
 

@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import SVProgressHUD
 
 
 class RegisterViewController: UIViewController {
@@ -31,7 +32,8 @@ class RegisterViewController: UIViewController {
   
     @IBAction func registerPressed(_ sender: AnyObject) {
         
-
+        SVProgressHUD.show() //triggers loading indicator popup
+                
         //TODO: Set up a new user on our Firbase database
         
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) {
@@ -45,6 +47,8 @@ class RegisterViewController: UIViewController {
             {
                 //success
                 print("Registration Succesful!")
+                
+                SVProgressHUD.dismiss()
                 
             //inside a closure - i.e a method without a name
             //So need to specify where the method for performSegue occure

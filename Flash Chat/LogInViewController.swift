@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LogInViewController: UIViewController {
     
@@ -26,6 +27,8 @@ class LogInViewController: UIViewController {
 
    
     @IBAction func logInPressed(_ sender: AnyObject) {
+        
+        SVProgressHUD.show() //triggers loading indicator popup
 
         Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
             
@@ -33,6 +36,8 @@ class LogInViewController: UIViewController {
                 print(error!)
             } else {
                 print("Log in succesful!")
+                
+                SVProgressHUD.dismiss()
                 
                  self.performSegue(withIdentifier: "goToChat", sender: self)
             }
