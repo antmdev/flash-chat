@@ -27,7 +27,7 @@
                         <rect key="frame" x="59" y="10" width="251" height="61"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-H3-UuV">
-                                <rect key="frame" x="9" y="20.5" width="244" height="20.5"/>
+                                <rect key="frame" x="9" y="20.5" width="235" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -41,13 +41,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Ael-H3-UuV" secondAttribute="trailing" constant="-2" id="FEb-k1-GJa"/>
+                            <constraint firstAttribute="trailing" secondItem="Ael-H3-UuV" secondAttribute="trailingMargin" constant="15" id="FEb-k1-GJa"/>
                             <constraint firstAttribute="trailing" secondItem="gx0-0L-EbZ" secondAttribute="trailing" constant="-2" id="HzA-QB-Upv"/>
                             <constraint firstItem="gx0-0L-EbZ" firstAttribute="leading" secondItem="Yxz-95-vHl" secondAttribute="leading" constant="9" id="V9B-Ck-tx7"/>
                             <constraint firstItem="gx0-0L-EbZ" firstAttribute="top" secondItem="Yxz-95-vHl" secondAttribute="top" constant="11.5" id="awf-jG-8X5"/>
                             <constraint firstItem="Ael-H3-UuV" firstAttribute="top" secondItem="gx0-0L-EbZ" secondAttribute="bottom" constant="-2" id="cog-xQ-sP7"/>
                             <constraint firstItem="Ael-H3-UuV" firstAttribute="leading" secondItem="Yxz-95-vHl" secondAttribute="leading" constant="9" id="iOu-Kv-VUo"/>
-                            <constraint firstAttribute="bottom" secondItem="gx0-0L-EbZ" secondAttribute="bottom" constant="38.5" id="kRQ-cP-r6v"/>
+                            <constraint firstAttribute="bottom" secondItem="gx0-0L-EbZ" secondAttribute="bottom" constant="38.5" placeholder="YES" id="kRQ-cP-r6v"/>
                             <constraint firstAttribute="bottom" secondItem="Ael-H3-UuV" secondAttribute="bottom" constant="20" id="wpC-VG-q67"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -73,7 +73,7 @@
                 <outlet property="messageBody" destination="Ael-H3-UuV" id="kXz-0y-fp3"/>
                 <outlet property="senderUsername" destination="gx0-0L-EbZ" id="VCZ-eh-QaB"/>
             </connections>
-            <point key="canvasLocation" x="437.68115942028987" y="381.36160714285711"/>
+            <point key="canvasLocation" x="289.85507246376812" y="380.69196428571428"/>
         </tableViewCell>
     </objects>
 </document>

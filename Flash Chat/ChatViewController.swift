@@ -33,8 +33,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.dataSource = self
 
 
-        
-        
         //TODO: Set yourself as the delegate of the text field here:
 
         
@@ -44,7 +42,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
 
         //TODO: Register your MessageCell.xib file here:
-         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil) , forCellReuseIdentifier: "customMessageCell")
+         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
         
         configureTableView()
@@ -64,7 +62,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
         
-        let messageArray = ["First Message","Second Meuyeuyfbeufbeuf beauif aduhf behbf iueyjb jhb djehb djdbuhwjefb seifewufh o;abfvukyfkb lkhusjb vcliwfb fhlizb kfjwlafjwr,fssage", "Third Message"]
+        let messageArray = ["First Message", "mins you have to give me 300001 hugs today, ok?", "Sorry mins not a fucking chance"]
         
         cell.messageBody.text = messageArray[indexPath.row]
         
