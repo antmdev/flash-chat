@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 import Firebase
 import ChameleonFramework
 
@@ -99,6 +100,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messageArray.count // number of rows required
     }
+        
     
 // if you want sections in your table view like ios settings
 //    func numberOfSections(in tableView: UITableView) -> Int {
@@ -107,28 +109,37 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    
     //TODO: Declare tableViewTapped here:
     @objc func tableViewTapped() {
         messageTextfield.endEditing(true)
     }
-    
-    
+
     //TODO: Declare configureTableView here:
     
     func configureTableView() {
         messageTableView.rowHeight = UITableView.automaticDimension
         messageTableView.estimatedRowHeight = 120.0
+           
 
     }
+    
+    func scrollToBottom() {
+
+     DispatchQueue.main.async {
+
+                  let indexPath = IndexPath(item: self.messageArray.count-1, section: 0)
+                  self.messageTableView.scrollToRow(at:  indexPath, at: .bottom, animated: true)
+           }
+    }
+    
+
     
     
     
     ///////////////////////////////////////////
     
     //MARK:- TextField Delegate Methods
-    
-    
-
     
     //TODO: Declare textFieldDidBeginEditing here:
     
@@ -163,9 +174,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: - Send & Recieve from Firebase
     
     
-    
-    
-    
     @IBAction func sendPressed(_ sender: AnyObject) {
         
         //TODO: Send the message to Firebase and save it in our database
@@ -194,12 +202,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.messageTextfield.text = ""
             }
         }
-            
-        
-        
-        
-        
-        
+
     }
     
     //TODO: Create the retrieveMessages method here:
@@ -220,10 +223,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let message = Message()
             message.messageBody = text //set message object in ethe message class
             message.sender = sender
+        
             
             self.messageArray.append(message)
+            
             self.configureTableView()
+            
+            self.scrollToBottom()
+            
             self.messageTableView.reloadData() //everytime we add new data to DB it will reload data so its shown.
+            
         })
     }
 
@@ -246,4 +255,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
 }
+
+    
 }
+
+

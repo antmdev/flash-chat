@@ -107,7 +107,7 @@
                                             <constraint firstAttribute="height" constant="30" id="t4i-pt-0WT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67C-Ey-AV3">
                                         <rect key="frame" x="16" y="165" width="343" height="30"/>
@@ -184,7 +184,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zuQ-XP-4Q7">
                                         <rect key="frame" x="16" y="124" width="343" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OD6-NY-DlK">
                                         <rect key="frame" x="16" y="166" width="343" height="30"/>
@@ -356,6 +356,6 @@
         <image name="background1" width="1200" height="795"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRW-Qd-PQi"/>
+        <segue reference="mOy-cb-hAN"/>
     </inferredMetricsTieBreakers>
 </document>
