@@ -15,7 +15,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
        
     
     // Declare instance variables here
-
+    var messageArray : [Message] = [Message]()
     
     // We've pre-linked the IBOutlets
     @IBOutlet var heightConstraint: NSLayoutConstraint!
@@ -51,6 +51,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         configureTableView()
+        retrieveMessages()
         
        
     }
@@ -150,15 +151,58 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func sendPressed(_ sender: AnyObject) {
         
-        
         //TODO: Send the message to Firebase and save it in our database
+        
+        messageTextfield.endEditing(true) //close text editer
+        messageTextfield.isEnabled = false//disable text message after sending
+        sendButton.isEnabled = false
+        
+        //send button creates a reference to new db in side our db
+        let messagesDB = Database.database().reference().child("Messages")
+        
+        //save message as dictionary as key-value pairs
+        let messageDictionary = ["Sender": Auth.auth().currentUser?.email, "MessageBody": messageTextfield.text!]
+        
+        //saving message dictionary in messages DB under automatically generated identifier
+        messagesDB.childByAutoId().setValue(messageDictionary){
+            (error, reference) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                print("Message saved succesfully!")
+                
+                self.messageTextfield.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.messageTextfield.text = ""
+            }
+        }
+            
+        
+        
+        
         
         
     }
     
     //TODO: Create the retrieveMessages method here:
     
-    
+    func retrieveMessages() {
+        
+        let messageDB = Database.database().reference().child("Messages")
+        
+        messageDB.observe(.childAdded, with: { (snapshot) in
+            
+            // set the value in the DB by declaring that its a string-string dictionary.
+            
+            let snapshotValue = snapshot.value as! Dictionary<String,String>
+            
+            let text = snapshotValue["MessageBody"]!
+            let sender = snapshotValue["Sender"]!
+            
+            print(text, sender)
+        })
+    }
 
     
     
