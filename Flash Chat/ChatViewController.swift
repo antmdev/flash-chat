@@ -121,7 +121,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.rowHeight = UITableView.automaticDimension
         messageTableView.estimatedRowHeight = 120.0
            
-
     }
     
     func scrollToBottom() {
