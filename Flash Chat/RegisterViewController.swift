@@ -28,8 +28,8 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
-  
+    
+    
     @IBAction func registerPressed(_ sender: AnyObject) {
         
         SVProgressHUD.show() //triggers loading indicator popup
